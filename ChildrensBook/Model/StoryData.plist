@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>text</key>
+		<string>The First Page</string>
+		<key>imageFilename</key>
+		<string>jurgis-small</string>
+		<key>audioFilename</key>
+		<string>moan</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>The Second Page</string>
+		<key>imageFilename</key>
+		<string>jurgis</string>
+		<key>audioFilename</key>
+		<string>Ping</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>The Third Page</string>
+		<key>imageFilename</key>
+		<string>liljurgis</string>
+		<key>audioFilename</key>
+		<string>Ping</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>The Fourth Page</string>
+		<key>imageFilename</key>
+		<string>liljurgis</string>
+		<key>audioFilename</key>
+		<string>Ping</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>The Fifth Page</string>
+		<key>imageFilename</key>
+		<string>liljurgis</string>
+		<key>audioFilename</key>
+		<string>Ping</string>
+	</dict>
+</array>
+</plist>

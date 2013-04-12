@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Norah Jane Gillies Lushman</string>
+		<key>position</key>
+		<string>Author</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Norah Jane Gillies Lushman</string>
+		<key>position</key>
+		<string>Illustrator</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Alex Silva</string>
+		<key>position</key>
+		<string>Developer</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dot Biz Press</string>
+		<key>position</key>
+		<string>Publisher</string>
+	</dict>
+</array>
+</plist>
