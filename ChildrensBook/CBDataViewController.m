@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Alex Silva. All rights reserved.
 
 //INDIVIDUAL ATTRIBUTES FOR ATTRIBUTED STRING
-static NSString *FONT_NAME = @"Helvetica-Bold";
-static CGFloat FONT_SIZE = 50.0f;
+static NSString *FONT_NAME = @"ChalkboardSE-Regular";
+static CGFloat FONT_SIZE = 55.0f;
 //s
 #import <QuartzCore/QuartzCore.h>
 #import "CBDataViewController.h"

@@ -6,13 +6,8 @@
 //  Copyright (c) 2013 Alex Silva. All rights reserved.
 //
 
-//INDIVIDUAL ATTRIBUTES
-static NSString *FONT_NAME = @"Helvetica-Bold";
-static CGFloat FONT_SIZE = 50.0f;
-
 #import <QuartzCore/QuartzCore.h>
 #import "CBPageView.h"
-
 
 @interface CBPageView()
 
@@ -38,10 +33,24 @@ static CGFloat FONT_SIZE = 50.0f;
         //CBview.textView.layer.borderWidth = 5.0f;
         //CBview.textView.layer.borderColor = [[UIColor magentaColor] CGColor];
         
+        /*
+         prints font-families
+        NSMutableArray *fontNames = [[NSMutableArray alloc] init];
+        NSArray *fontFamilyNames = [UIFont familyNames];
+        for (NSString *familyName in fontFamilyNames){
+            NSLog(@"Font family name = %@", familyName);
+            NSArray *names = [UIFont fontNamesForFamilyName:familyName];
+             NSLog(@"Font names = %@", fontNames);
+            [fontNames addObjectsFromArray:names];
+        }
+         
+         */
+        
+        
         self = CBview;
         
         //TODO: add real timecodes!
-        _timeCodes = @[@1.0, @3.0, @5.0, @6.0];
+        _timeCodes = @[@1.0, @3.0, @5.0, @6.5, @7.8];
         _timers = [NSMutableArray array];
         
         _attrStringArray = [[NSMutableArray alloc] initWithCapacity:1];
