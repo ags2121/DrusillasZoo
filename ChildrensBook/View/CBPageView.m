@@ -13,13 +13,9 @@
 
 @property (strong, nonatomic) NSMutableAttributedString *currentDisplayString;
 @property (strong, nonatomic) NSMutableAttributedString *finalString;
-
 @property (strong, nonatomic) NSMutableArray *timers;
-
 @property (strong, nonatomic) NSArray *timeCodes;
-
 @property (strong, nonatomic) NSMutableArray *attrStringArray;
-
 @property NSUInteger index;
 
 @end
@@ -45,6 +41,8 @@
     return self;
 }
 
+#pragma Read to me methods
+
 - (IBAction)buttonPressed:(id)sender {
     
     NSLog(@"Button pressed");
@@ -60,7 +58,7 @@
     //unhighlight text
     self.textView.attributedText = self.defaultString;
     
-    //remove elements from attrString array
+    //remove word elements from attrString array
     [self.attrStringArray removeAllObjects];
     
     //print all elements in array
@@ -76,12 +74,12 @@
     
     for(NSString *word in self.wordArray){
         
+        //retrieve current word to be highlighted
         NSMutableAttributedString *currentHighlightedWord = [[NSMutableAttributedString alloc] initWithString: self.wordArray[_index] attributes:normalAttributes];
         
-            NSLog(@"Current highlighted word: %@", currentHighlightedWord.mutableString);
+        NSLog(@"Current highlighted word: %@", currentHighlightedWord.mutableString);
         
         NSArray *before;
-
         NSArray *after;
     
         //CASE: First word
@@ -91,10 +89,9 @@
             
             //add space to the end of word
             [currentHighlightedWord replaceCharactersInRange:NSMakeRange(currentHighlightedWord.mutableString.length, 0) withString:@" "];
-            //NSLog(@"testing added a character: %@", currentHighlightedWord.mutableString);
-            
+            //add highlight to word
             [currentHighlightedWord addAttribute:NSBackgroundColorAttributeName value:[UIColor yellowColor] range:NSMakeRange(0, currentHighlightedWord.mutableString.length-1)];
-            
+            //append the unhighlighted words
             [currentHighlightedWord appendAttributedString:tempAfter];
             [self.attrStringArray addObject:currentHighlightedWord];
             NSLog(@"First index %@", currentHighlightedWord);
@@ -111,7 +108,7 @@
             
             [tempBefore appendAttributedString:currentHighlightedWord];
             [self.attrStringArray addObject:tempBefore];
-                        NSLog(@"Last index %@", tempBefore);
+            NSLog(@"Last index %@", tempBefore);
         }
         
         
@@ -121,12 +118,8 @@
             
             NSMutableAttributedString * tempBefore = [[NSMutableAttributedString alloc] initWithString:[before componentsJoinedByString:@" "] attributes:normalAttributes];
             
-            //NSLog(@"tempBefore for mid index: %@", tempBefore);
-            
             after = [NSArray arrayWithArray: [self.wordArray subarrayWithRange: NSMakeRange(_index+1, (self.wordArray.count-1)-_index )]];
             NSMutableAttributedString * tempAfter = [[NSMutableAttributedString alloc] initWithString:[after componentsJoinedByString:@" "] attributes:normalAttributes];
-            
-            //NSLog(@"tempAfter for mid index: %@", tempAfter);
             
             [tempBefore replaceCharactersInRange:NSMakeRange(tempBefore.mutableString.length, 0) withString:@" "];
             [currentHighlightedWord replaceCharactersInRange:NSMakeRange(currentHighlightedWord.mutableString.length, 0) withString:@" "];
@@ -136,67 +129,17 @@
             [tempBefore appendAttributedString:currentHighlightedWord];
             [tempBefore appendAttributedString:tempAfter];
             
-            
             [self.attrStringArray addObject:tempBefore];
                         NSLog(@"%@", tempBefore);
         }
 
-        
+        //create timer
         NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval: [self.timeCodes[_index] doubleValue] target:self selector:@selector(updateTextField:) userInfo: @(_index) repeats: NO];
         
         //add timer to timer array
         [self.timers addObject:aTimer];
-        
+        //add timer to runLoop
         [[NSRunLoop mainRunLoop] addTimer: aTimer forMode:NSRunLoopCommonModes];
-        
-    
-    
-//            //change color of word
-//            NSAttributedString * subString = [[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@"%@ ", word] attributes:highlightedAttributes];
-//            
-//            //append new attributed subString to our building final highlighted text
-//            [self.finalString appendAttributedString:subString];
-//        
-//            NSMutableArray *remainingWords;
-//            if (_index < self.wordArray.count-1)
-//                remainingWords = [NSMutableArray arrayWithArray: [self.wordArray subarrayWithRange:NSMakeRange(_index, self.wordArray.count-_index)] ];
-//            
-//            //if there are remaining words
-//            if (remainingWords) {
-//                
-//                //couldn't figure out how to use NSMakeRange to just pick up one element
-//                [remainingWords removeObjectAtIndex:0];
-//                
-//                NSLog(@"Remaining words: %@", remainingWords);
-//                
-//                NSMutableAttributedString * postString = [[NSMutableAttributedString alloc] initWithString:[remainingWords componentsJoinedByString:@" "] attributes:normalAttributes];
-//                
-//                self.currentDisplayString = [[NSMutableAttributedString alloc] initWithAttributedString:self.finalString];
-//                
-//                [self.currentDisplayString appendAttributedString:postString];
-//                
-//                [self.attributedStrings addObject:self.currentDisplayString];
-//                
-//                NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval: [self.timeCodes[_index] floatValue] target:self selector:@selector(updateTextField:) userInfo: @(_index) repeats: NO];
-//                
-//                //add timer to timer array
-//                [self.timers addObject:aTimer];
-//                
-//                [[NSRunLoop mainRunLoop] addTimer: aTimer forMode:NSRunLoopCommonModes];
-//                
-//            }
-//            else{
-//                
-//                [self.attributedStrings addObject:self.finalString];
-//                
-//                NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval: [self.timeCodes[_index] doubleValue] target:self selector:@selector(updateTextField:) userInfo:@(_index) repeats: NO];
-//                
-//                //add timer to timer array
-//                [self.timers addObject:aTimer];
-//                
-//                [[NSRunLoop mainRunLoop] addTimer: aTimer forMode:NSRunLoopCommonModes];
-//                
-//            }
         
         NSLog(@"timecode: %f", [self.timeCodes[_index] doubleValue]);
         NSLog(@"at index: %d", _index);
@@ -207,7 +150,7 @@
     //reset to default, non-highlighted text
     NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval: [self.timeCodes[_index] doubleValue] target:self selector:@selector(resetTextField:) userInfo: @(_index) repeats: NO];
 
-    //add last timer to timer array
+    //add last reset timer to timer array
     [self.timers addObject:aTimer];
 
     [[NSRunLoop mainRunLoop] addTimer: aTimer forMode:NSRunLoopCommonModes];
@@ -233,7 +176,7 @@
     
 }
 
-#pragma Sound methods
+#pragma Audio methods
 
 -(void)loadSound
 {

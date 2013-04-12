@@ -29,23 +29,11 @@
     pageView.homeButton.layer.cornerRadius = 10;
     pageView.homeButton.clipsToBounds = YES;
     
-
-    
     //make pageView the VC's view
     self.view = pageView;
 
     //pass along text as words in an array, for processing
-    pageView.wordArray = [self.dataObject[@"text"] componentsSeparatedByString:@" "];
-    
-    
-    NSDictionary * normalAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
-    
-    pageView.attributedStrings2 = [[NSMutableArray alloc] initWithCapacity:1];
-    
-    for( NSString *normalString in pageView.wordArray){
-        [ pageView.attributedStrings2 addObject: [[NSMutableAttributedString alloc] initWithString:normalString attributes:normalAttributes] ];
-    }
-    
+    pageView.wordArray = [self.dataObject[@"text"] componentsSeparatedByString:@" "];    
     
 }
 

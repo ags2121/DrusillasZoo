@@ -16,8 +16,6 @@
 @property (strong, nonatomic) NSString *audioTextPath;
 @property SystemSoundID soundID;
 
-@property (strong, nonatomic) NSMutableArray *attributedStrings2;
-
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *readToMeButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeButton;
