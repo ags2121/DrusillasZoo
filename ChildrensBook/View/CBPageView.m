@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 Alex Silva. All rights reserved.
 //
 
+//INDIVIDUAL ATTRIBUTES
+static NSString *FONT_NAME = @"Helvetica-Bold";
+static CGFloat FONT_SIZE = 50.0f;
+
 #import <QuartzCore/QuartzCore.h>
 #import "CBPageView.h"
+
 
 @interface CBPageView()
 
@@ -28,8 +33,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         CBPageView *CBview = [[[NSBundle mainBundle] loadNibNamed:@"CBPageView" owner:self options:nil] objectAtIndex:0];
-        CBview.textView.layer.borderWidth = 5.0f;
-        CBview.textView.layer.borderColor = [[UIColor magentaColor] CGColor];
+        
+        //add textView border
+        //CBview.textView.layer.borderWidth = 5.0f;
+        //CBview.textView.layer.borderColor = [[UIColor magentaColor] CGColor];
+        
         self = CBview;
         
         //TODO: add real timecodes!
@@ -46,9 +54,6 @@
 - (IBAction)buttonPressed:(id)sender {
     
     NSLog(@"Button pressed");
-    
-    //ATTRIBUTES
-    NSDictionary * normalAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
     
     //RESET ELEMENTS
     //if user presses "read to me!" button while being read to, we need to cancel out the current timers.
@@ -75,7 +80,7 @@
     for(NSString *word in self.wordArray){
         
         //retrieve current word to be highlighted
-        NSMutableAttributedString *currentHighlightedWord = [[NSMutableAttributedString alloc] initWithString: self.wordArray[_index] attributes:normalAttributes];
+        NSMutableAttributedString *currentHighlightedWord = [[NSMutableAttributedString alloc] initWithString: self.wordArray[_index] attributes:self.defaultAttributesDict];
         
         NSLog(@"Current highlighted word: %@", currentHighlightedWord.mutableString);
         
@@ -85,7 +90,7 @@
         //CASE: First word
         if (_index == 0) {
             after = [NSArray arrayWithArray: [self.wordArray subarrayWithRange: NSMakeRange(_index+1, self.wordArray.count-(_index+1))]];
-            NSMutableAttributedString * tempAfter = [[NSMutableAttributedString alloc] initWithString:[after componentsJoinedByString:@" "] attributes:normalAttributes];
+            NSMutableAttributedString * tempAfter = [[NSMutableAttributedString alloc] initWithString:[after componentsJoinedByString:@" "] attributes:self.defaultAttributesDict];
             
             //add space to the end of word
             [currentHighlightedWord replaceCharactersInRange:NSMakeRange(currentHighlightedWord.mutableString.length, 0) withString:@" "];
@@ -100,7 +105,7 @@
         //CASE: Last word
         else if(_index == self.wordArray.count-1){
             before = [NSArray arrayWithArray: [self.wordArray subarrayWithRange: NSMakeRange(0, _index)]];
-            NSMutableAttributedString * tempBefore = [[NSMutableAttributedString alloc] initWithString:[before componentsJoinedByString:@" "] attributes:normalAttributes];
+            NSMutableAttributedString * tempBefore = [[NSMutableAttributedString alloc] initWithString:[before componentsJoinedByString:@" "] attributes:self.defaultAttributesDict];
             
             [tempBefore replaceCharactersInRange:NSMakeRange(tempBefore.mutableString.length, 0) withString:@" "];
             
@@ -116,10 +121,10 @@
             
             before = [NSArray arrayWithArray: [self.wordArray subarrayWithRange: NSMakeRange(0, _index)]];
             
-            NSMutableAttributedString * tempBefore = [[NSMutableAttributedString alloc] initWithString:[before componentsJoinedByString:@" "] attributes:normalAttributes];
+            NSMutableAttributedString * tempBefore = [[NSMutableAttributedString alloc] initWithString:[before componentsJoinedByString:@" "] attributes:self.defaultAttributesDict];
             
             after = [NSArray arrayWithArray: [self.wordArray subarrayWithRange: NSMakeRange(_index+1, (self.wordArray.count-1)-_index )]];
-            NSMutableAttributedString * tempAfter = [[NSMutableAttributedString alloc] initWithString:[after componentsJoinedByString:@" "] attributes:normalAttributes];
+            NSMutableAttributedString * tempAfter = [[NSMutableAttributedString alloc] initWithString:[after componentsJoinedByString:@" "] attributes:self.defaultAttributesDict];
             
             [tempBefore replaceCharactersInRange:NSMakeRange(tempBefore.mutableString.length, 0) withString:@" "];
             [currentHighlightedWord replaceCharactersInRange:NSMakeRange(currentHighlightedWord.mutableString.length, 0) withString:@" "];

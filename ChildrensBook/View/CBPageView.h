@@ -14,7 +14,10 @@
 @property (strong, nonatomic) NSArray *wordArray;
 @property (strong, nonatomic) NSAttributedString *defaultString;
 @property (strong, nonatomic) NSString *audioTextPath;
+@property (strong, nonatomic) NSString *originalString;
 @property SystemSoundID soundID;
+
+@property (strong, nonatomic) NSDictionary *defaultAttributesDict;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *readToMeButton;

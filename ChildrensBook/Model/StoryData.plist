@@ -6,7 +6,7 @@
 		<key>text</key>
 		<string>The First Page</string>
 		<key>imageFilename</key>
-		<string>jurgis-small</string>
+		<string>CBContentPage1</string>
 		<key>audioFilename</key>
 		<string>moan</string>
 	</dict>
@@ -14,7 +14,7 @@
 		<key>text</key>
 		<string>The Second Page</string>
 		<key>imageFilename</key>
-		<string>jurgis</string>
+		<string>CBContentPage2</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
 	</dict>
@@ -22,7 +22,7 @@
 		<key>text</key>
 		<string>The Third Page</string>
 		<key>imageFilename</key>
-		<string>liljurgis</string>
+		<string>CBContentPage3</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
 	</dict>
@@ -30,7 +30,7 @@
 		<key>text</key>
 		<string>The Fourth Page</string>
 		<key>imageFilename</key>
-		<string>liljurgis</string>
+		<string>CBContentPage4</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
 	</dict>
@@ -38,7 +38,7 @@
 		<key>text</key>
 		<string>The Fifth Page</string>
 		<key>imageFilename</key>
-		<string>liljurgis</string>
+		<string>CBContentPage5</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
 	</dict>
