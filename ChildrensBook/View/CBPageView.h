@@ -17,6 +17,8 @@
 @property (strong, nonatomic) NSString *originalString;
 @property SystemSoundID soundID;
 
+@property (strong, nonatomic) NSArray *timeCodes;
+
 @property (strong, nonatomic) NSDictionary *defaultAttributesDict;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;

@@ -9,38 +9,96 @@
 		<string>CBContentPage1</string>
 		<key>audioFilename</key>
 		<string>moan</string>
+		<key>timeCodes</key>
+		<array>
+			<real>1</real>
+			<real>2.3</real>
+			<real>3</real>
+			<real>3.7</real>
+			<real>4.6</real>
+		</array>
 	</dict>
 	<dict>
 		<key>text</key>
-		<string>The Second Page</string>
+		<string>The play group is huge and fun.</string>
 		<key>imageFilename</key>
 		<string>CBContentPage2</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
+		<key>timeCodes</key>
+		<array>
+			<real>0.9</real>
+			<real>1.6</real>
+			<real>2.4</real>
+			<real>3.5</real>
+			<real>4.3</real>
+			<real>5.1</real>
+			<real>6</real>
+			<real>6.6</real>
+		</array>
 	</dict>
 	<dict>
 		<key>text</key>
-		<string>The Third Page</string>
+		<string>Tom is fun and you can ride him.</string>
 		<key>imageFilename</key>
 		<string>CBContentPage3</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
+		<key>timeCodes</key>
+		<array>
+			<real>0.9</real>
+			<real>1.6</real>
+			<real>2.4</real>
+			<real>3.5</real>
+			<real>4.3</real>
+			<real>5.1</real>
+			<real>6</real>
+			<real>6.6</real>
+			<integer>7</integer>
+		</array>
 	</dict>
 	<dict>
 		<key>text</key>
-		<string>The Fourth Page</string>
+		<string>The slide is fun and tall and really fun.</string>
 		<key>imageFilename</key>
 		<string>CBContentPage4</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
+		<key>timeCodes</key>
+		<array>
+			<real>0.9</real>
+			<real>1.6</real>
+			<real>2.4</real>
+			<real>3.5</real>
+			<real>4.3</real>
+			<real>5.1</real>
+			<real>6</real>
+			<real>6.6</real>
+			<integer>7</integer>
+			<real>7.8</real>
+		</array>
 	</dict>
 	<dict>
 		<key>text</key>
-		<string>The Fifth Page</string>
+		<string>The snake is scary and big and it is slipping.</string>
 		<key>imageFilename</key>
 		<string>CBContentPage5</string>
 		<key>audioFilename</key>
 		<string>Ping</string>
+		<key>timeCodes</key>
+		<array>
+			<real>0.9</real>
+			<real>1.6</real>
+			<real>2.4</real>
+			<real>3.5</real>
+			<real>4.3</real>
+			<real>5.1</real>
+			<real>6</real>
+			<real>6.6</real>
+			<integer>7</integer>
+			<real>7.8</real>
+			<real>8.5</real>
+		</array>
 	</dict>
 </array>
 </plist>

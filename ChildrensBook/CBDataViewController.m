@@ -7,8 +7,9 @@
 
 //INDIVIDUAL ATTRIBUTES FOR ATTRIBUTED STRING
 static NSString *FONT_NAME = @"ChalkboardSE-Regular";
-static CGFloat FONT_SIZE = 55.0f;
-//s
+static CGFloat FONT_SIZE = 50.0f;
+//TODO: line spacing attribute
+
 #import <QuartzCore/QuartzCore.h>
 #import "CBDataViewController.h"
 #import "CBPageView.h"
@@ -37,6 +38,7 @@ static CGFloat FONT_SIZE = 55.0f;
     pageView.textView.attributedText = defaultString;
     pageView.defaultString = defaultString;
     pageView.defaultAttributesDict = defaultAttributesDict;
+    pageView.timeCodes = self.dataObject[@"timeCodes"];
     
 //    pageView.textView.attributedText = [[NSAttributedString alloc] initWithString: self.dataObject[@"text"]];
 //    pageView.defaultString = pageView.textView.attributedText;
@@ -45,6 +47,8 @@ static CGFloat FONT_SIZE = 55.0f;
     pageView.imageView.image = [UIImage imageNamed: self.dataObject[@"imageFilename"]];
     pageView.homeButton.layer.cornerRadius = 10;
     pageView.homeButton.clipsToBounds = YES;
+    pageView.readToMeButton.layer.cornerRadius = 10;
+    pageView.readToMeButton.clipsToBounds = YES;
     
     //make pageView the VC's view
     self.view = pageView;

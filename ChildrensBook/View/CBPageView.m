@@ -14,7 +14,6 @@
 @property (strong, nonatomic) NSMutableAttributedString *currentDisplayString;
 @property (strong, nonatomic) NSMutableAttributedString *finalString;
 @property (strong, nonatomic) NSMutableArray *timers;
-@property (strong, nonatomic) NSArray *timeCodes;
 @property (strong, nonatomic) NSMutableArray *attrStringArray;
 @property NSUInteger index;
 
@@ -43,7 +42,6 @@
              NSLog(@"Font names = %@", fontNames);
             [fontNames addObjectsFromArray:names];
         }
-         
          */
         
         
