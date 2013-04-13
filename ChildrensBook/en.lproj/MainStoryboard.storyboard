@@ -79,18 +79,60 @@
                                     <action selector="hitButtonLeft:" destination="H0U-iU-Hnm" eventType="touchUpInside" id="NXp-IL-2lo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36V-Fv-q73">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Jag-RA-XXb"/>
+                                    <constraint firstAttribute="width" constant="388" id="o8T-lX-s4C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hitTheEndButton:" destination="H0U-iU-Hnm" eventType="touchUpInside" id="mvO-rx-VJm"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Jq-wT-CDW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="Tym-QM-MKY"/>
+                                    <constraint firstAttribute="height" constant="75" id="oyK-rC-pao"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-L7-8OE">
+                                <attributedString key="attributedText">
+                                    <fragment content="Click Here!">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="k6R-8k-TNA" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="341" id="1BH-to-V2g"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="bottom" secondItem="tvu-wg-xKB" secondAttribute="bottom" type="default" id="99B-fd-vjt"/>
+                            <constraint firstItem="sYa-oN-9zY" firstAttribute="trailing" secondItem="36V-Fv-q73" secondAttribute="trailing" type="default" id="BFP-dI-6ta"/>
+                            <constraint firstItem="9Jq-wT-CDW" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="109" id="Cge-H1-4dn"/>
                             <constraint firstItem="KHz-WU-S9p" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="239" id="D1E-4B-Ir7"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" type="default" id="Llo-P5-Tvi"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="trailing" secondItem="tvu-wg-xKB" secondAttribute="trailing" type="default" id="RFA-Ue-azT"/>
                             <constraint firstItem="KHz-WU-S9p" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="422" id="VN7-av-hOy"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" type="default" id="WYk-Bx-UeQ"/>
-                            <constraint firstItem="sYa-oN-9zY" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="382" id="bZd-K7-8Jh"/>
-                            <constraint firstItem="k6R-8k-TNA" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="83" id="nQ0-a1-BCc"/>
+                            <constraint firstItem="36V-Fv-q73" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="102" id="Yck-Rj-rNq"/>
+                            <constraint firstItem="AUa-L7-8OE" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="183" id="Zps-aF-qq5"/>
+                            <constraint firstItem="k6R-8k-TNA" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="83" id="aNB-4l-bCs"/>
+                            <constraint firstItem="9Jq-wT-CDW" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="35" id="hl9-EO-vrO"/>
+                            <constraint firstItem="36V-Fv-q73" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" type="default" id="l6v-R3-rFq"/>
+                            <constraint firstItem="AUa-L7-8OE" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="50" id="sFS-dQ-ThG"/>
                             <constraint firstItem="sYa-oN-9zY" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="437" id="xPs-9Y-MiK"/>
                         </constraints>
                     </view>
@@ -99,6 +141,7 @@
                         <outlet property="buttonMiddle" destination="KHz-WU-S9p" id="9tv-Xb-iLD"/>
                         <outlet property="buttonRight" destination="sYa-oN-9zY" id="dkR-3h-3bc"/>
                         <outlet property="pageImage" destination="Nch-Gv-nJc" id="WJE-ab-hej"/>
+                        <outlet property="theEndButton" destination="36V-Fv-q73" id="stp-p0-4p5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMY-kx-7ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,14 +239,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="CBHomeImg@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="9zI-V9-Zxi"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-78-j5Q">
+                                <attributedString key="attributedText">
+                                    <fragment content="Click Here!">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Y3-AU-IcI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="J8h-vZ-zXw"/>
+                                    <constraint firstAttribute="width" constant="136" id="XjU-fN-h2Q"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZC-2Y-gQM">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="2IL-Ef-Ww4"/>
-                                    <constraint firstAttribute="width" constant="162" id="DjR-FP-ccN"/>
+                                    <constraint firstAttribute="height" constant="95" id="qdV-mt-oX9"/>
+                                    <constraint firstAttribute="width" constant="406" id="ues-ql-wt8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" red="1" green="0.16543742510000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" image="CBHomeImgButton@2x.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -217,9 +279,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZZC-2Y-gQM" firstAttribute="leading" secondItem="7Y3-AU-IcI" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="6nd-nD-YIC"/>
+                            <constraint firstItem="ZZC-2Y-gQM" firstAttribute="leading" secondItem="Vd9-nd-X1B" secondAttribute="leading" constant="195" id="DDn-vL-7N3"/>
+                            <constraint firstItem="6C1-78-j5Q" firstAttribute="centerX" secondItem="7Y3-AU-IcI" secondAttribute="centerX" type="default" id="Es5-Rm-K4k"/>
                             <constraint firstItem="9zI-V9-Zxi" firstAttribute="trailing" secondItem="Vd9-nd-X1B" secondAttribute="trailing" type="default" id="Iyq-iU-ZMj"/>
-                            <constraint firstItem="ZZC-2Y-gQM" firstAttribute="leading" secondItem="Vd9-nd-X1B" secondAttribute="leading" constant="259" id="KST-lJ-aop"/>
-                            <constraint firstAttribute="bottom" secondItem="ZZC-2Y-gQM" secondAttribute="bottom" constant="114" id="S4H-Re-Riv"/>
+                            <constraint firstItem="6C1-78-j5Q" firstAttribute="top" secondItem="7Y3-AU-IcI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KW6-Wg-JVi"/>
+                            <constraint firstAttribute="bottom" secondItem="6C1-78-j5Q" secondAttribute="bottom" constant="25" id="WW8-ev-4ZO"/>
+                            <constraint firstAttribute="bottom" secondItem="ZZC-2Y-gQM" secondAttribute="bottom" constant="110" id="Ysa-zw-wgz"/>
                             <constraint firstItem="9zI-V9-Zxi" firstAttribute="leading" secondItem="Vd9-nd-X1B" secondAttribute="leading" type="default" id="bs8-yz-Bdl"/>
                             <constraint firstItem="9zI-V9-Zxi" firstAttribute="bottom" secondItem="Vd9-nd-X1B" secondAttribute="bottom" type="default" id="fqW-La-6aW"/>
                             <constraint firstItem="9zI-V9-Zxi" firstAttribute="top" secondItem="Vd9-nd-X1B" secondAttribute="top" type="default" id="hfA-tG-Fhu"/>
@@ -251,7 +317,9 @@
     <resources>
         <image name="CBEndingImg_Normal@2x.png" width="1536" height="2008"/>
         <image name="CBHomeImg@2x.png" width="1536" height="2008"/>
+        <image name="CBHomeImgButton@2x.png" width="812" height="190"/>
         <image name="CBTableOfContents@2x.png" width="1536" height="2008"/>
+        <image name="arrow.png" width="300" height="150"/>
     </resources>
     <classes>
         <class className="CBCreditsTableViewCell" superclassName="UITableViewCell">
@@ -275,11 +343,13 @@
                 <relationship kind="action" name="hitButtonLeft:"/>
                 <relationship kind="action" name="hitButtonMiddle:"/>
                 <relationship kind="action" name="hitButtonRight:"/>
+                <relationship kind="action" name="hitTheEndButton:"/>
                 <relationship kind="outlet" name="buttonLeft" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonMiddle" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonRight" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="pageImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pageText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="theEndButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="CBHomePageViewController" superclassName="UIViewController">

@@ -8,53 +8,52 @@
 		<key>imageFilename</key>
 		<string>CBContentPage1</string>
 		<key>audioFilename</key>
-		<string>moan</string>
+		<string>animals</string>
 		<key>timeCodes</key>
 		<array>
-			<real>1</real>
-			<real>2.3</real>
-			<real>3</real>
-			<real>3.7</real>
-			<real>4.6</real>
+			<integer>0</integer>
+			<real>0.36</real>
+			<real>1.48</real>
+			<real>1.98</real>
+			<real>3.47</real>
 		</array>
 	</dict>
 	<dict>
 		<key>text</key>
-		<string>The play group is huge and fun.</string>
+		<string>The playground is huge and fun.</string>
 		<key>imageFilename</key>
 		<string>CBContentPage2</string>
 		<key>audioFilename</key>
-		<string>Ping</string>
+		<string>playground</string>
 		<key>timeCodes</key>
 		<array>
-			<real>0.9</real>
-			<real>1.6</real>
-			<real>2.4</real>
-			<real>3.5</real>
-			<real>4.3</real>
-			<real>5.1</real>
-			<real>6</real>
-			<real>6.6</real>
+			<real>0</real>
+			<real>0.3</real>
+			<real>0.96</real>
+			<real>1.33</real>
+			<real>1.77</real>
+			<real>2.2</real>
+			<real>2.97</real>
 		</array>
 	</dict>
 	<dict>
 		<key>text</key>
-		<string>Tom is fun and you can ride him.</string>
+		<string>Thomas is fun and you can ride him.</string>
 		<key>imageFilename</key>
 		<string>CBContentPage3</string>
 		<key>audioFilename</key>
-		<string>Ping</string>
+		<string>thomas</string>
 		<key>timeCodes</key>
 		<array>
-			<real>0.9</real>
-			<real>1.6</real>
-			<real>2.4</real>
-			<real>3.5</real>
-			<real>4.3</real>
-			<real>5.1</real>
-			<real>6</real>
-			<real>6.6</real>
-			<integer>7</integer>
+			<real>0</real>
+			<real>0.5600000000000001</real>
+			<real>0.91</real>
+			<real>1.36</real>
+			<real>1.7</real>
+			<real>1.97</real>
+			<real>2.37</real>
+			<real>2.71</real>
+			<real>3.26</real>
 		</array>
 	</dict>
 	<dict>
@@ -63,41 +62,41 @@
 		<key>imageFilename</key>
 		<string>CBContentPage4</string>
 		<key>audioFilename</key>
-		<string>Ping</string>
+		<string>slide</string>
 		<key>timeCodes</key>
 		<array>
-			<real>0.9</real>
-			<real>1.6</real>
-			<real>2.4</real>
-			<real>3.5</real>
-			<real>4.3</real>
-			<real>5.1</real>
-			<real>6</real>
-			<real>6.6</real>
-			<integer>7</integer>
-			<real>7.8</real>
+			<real>0</real>
+			<real>0.28</real>
+			<real>0.86</real>
+			<real>1.18</real>
+			<real>1.49</real>
+			<real>1.77</real>
+			<real>2.08</real>
+			<real>2.38</real>
+			<real>2.9</real>
+			<real>3.59</real>
 		</array>
 	</dict>
 	<dict>
 		<key>text</key>
-		<string>The snake is scary and big and it is slipping.</string>
+		<string>The snake is scary and big and it is sleeping.</string>
 		<key>imageFilename</key>
 		<string>CBContentPage5</string>
 		<key>audioFilename</key>
-		<string>Ping</string>
+		<string>snake</string>
 		<key>timeCodes</key>
 		<array>
-			<real>0.9</real>
-			<real>1.6</real>
+			<real>0</real>
+			<real>0.33</real>
+			<real>0.92</real>
+			<real>1.44</real>
 			<real>2.4</real>
-			<real>3.5</real>
-			<real>4.3</real>
-			<real>5.1</real>
-			<real>6</real>
-			<real>6.6</real>
-			<integer>7</integer>
-			<real>7.8</real>
-			<real>8.5</real>
+			<real>2.9</real>
+			<real>3.365</real>
+			<real>3.9</real>
+			<real>4.29</real>
+			<real>4.7</real>
+			<real>5.3</real>
 		</array>
 	</dict>
 </array>

@@ -11,6 +11,7 @@ static CGFloat FONT_SIZE = 50.0f;
 //TODO: line spacing attribute
 
 #import <QuartzCore/QuartzCore.h>
+#import "CBHomePageViewController.h"
 #import "CBDataViewController.h"
 #import "CBPageView.h"
 
@@ -28,6 +29,9 @@ static CGFloat FONT_SIZE = 50.0f;
     CBPageView *pageView = [[CBPageView alloc] initWithFrame:self.view.bounds];
     //add text
     
+    //make CDDataViewController the CBPageView's delegate
+    pageView.delegate = self;
+    
     pageView.originalString = self.dataObject[@"text"];
     
     //create default String from attribute dictionary
@@ -38,10 +42,10 @@ static CGFloat FONT_SIZE = 50.0f;
     pageView.textView.attributedText = defaultString;
     pageView.defaultString = defaultString;
     pageView.defaultAttributesDict = defaultAttributesDict;
-    pageView.timeCodes = self.dataObject[@"timeCodes"];
     
-//    pageView.textView.attributedText = [[NSAttributedString alloc] initWithString: self.dataObject[@"text"]];
-//    pageView.defaultString = pageView.textView.attributedText;
+    pageView.timeCodes = self.dataObject[@"timeCodes"];
+    pageView.audioTextPath = self.dataObject[@"audioFilename"];
+    [pageView loadSound];
     
     //add image
     pageView.imageView.image = [UIImage imageNamed: self.dataObject[@"imageFilename"]];
@@ -67,10 +71,6 @@ static CGFloat FONT_SIZE = 50.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    CBPageView *theView = (CBPageView*)self.view;
-    theView.audioTextPath = self.dataObject[@"audioFilename"];
-    [theView loadSound];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -78,6 +78,20 @@ static CGFloat FONT_SIZE = 50.0f;
     [super viewWillDisappear:animated];
     CBPageView *theView = (CBPageView*)self.view;
     [theView unloadSound];
+}
+
+-(void)jumpToHomePage{
+    
+    // Grab the viewControllers at position 4 & 5 - note, your model is responsible for providing these.
+    // Technically, you could have them pre-made and passed in as an array containing the two items...
+    
+    CBHomePageViewController *homePageVC = (CBHomePageViewController*)[self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
+    
+    //  Set up the array that holds the VCs
+    NSArray *viewControllersToJumpTo = @[homePageVC];
+    
+    [self.modelController.pageViewController setViewControllers:viewControllersToJumpTo direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
+    
 }
 
 @end

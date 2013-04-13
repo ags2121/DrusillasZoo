@@ -38,7 +38,6 @@
         return nil;
     }
     
-    
     if (index==0) {
         CBHomePageViewController *homePageViewController = [storyboard instantiateViewControllerWithIdentifier:@"CBHomePageViewController"];
         return homePageViewController;
@@ -59,6 +58,7 @@
     CBDataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"CBDataViewController"];
     NSLog(@"index in viewController at index method: %d", index);
     dataViewController.dataObject = self.pageData[index-2];
+    dataViewController.modelController = self;
     return dataViewController;
 }
 

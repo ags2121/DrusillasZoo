@@ -44,19 +44,15 @@
         }
          */
         
-        
         self = CBview;
         
-        //TODO: add real timecodes!
-        _timeCodes = @[@1.0, @3.0, @5.0, @6.5, @7.8];
         _timers = [NSMutableArray array];
-        
         _attrStringArray = [[NSMutableArray alloc] initWithCapacity:1];
     }
     return self;
 }
 
-#pragma Read to me methods
+#pragma mark - Read to me methods
 
 - (IBAction)buttonPressed:(id)sender {
     
@@ -188,7 +184,7 @@
     
 }
 
-#pragma Audio methods
+#pragma mark - Audio methods
 
 -(void)loadSound
 {
@@ -209,4 +205,10 @@
 {
     AudioServicesPlaySystemSound(_soundID);
 }
+
+- (IBAction)homeButtonPressed:(id)sender
+{
+    [self.delegate jumpToHomePage];
+}
+
 @end

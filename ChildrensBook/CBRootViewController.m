@@ -59,6 +59,7 @@
     if (!_modelController) {
         _modelController = [[CBModelController alloc] init];
     }
+    _modelController.pageViewController = self.pageViewController;
     return _modelController;
 }
 

@@ -12,6 +12,8 @@
 
 @interface CBModelController : NSObject <UIPageViewControllerDataSource>
 
+@property (strong, nonatomic) UIPageViewController* pageViewController;
+
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(UIViewController *)viewController;
 
