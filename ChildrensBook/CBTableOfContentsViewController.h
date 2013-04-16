@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBRootViewController.h"
 
-@interface CBTableOfContentsViewController : UIViewController
+@class CBTableOfContentsViewController;
+
+@interface CBTableOfContentsViewController : UIViewController <CBPanGestureDelegate, UIGestureRecognizerDelegate>
 
 @end

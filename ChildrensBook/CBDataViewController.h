@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBRootViewController.h"
 #import "CBModelController.h"
 #import "CBPageView.h"
 
 @class CBDataViewController;
 
-@interface CBDataViewController : UIViewController <CBPageViewDelegate>
+@interface CBDataViewController : UIViewController <CBPanGestureDelegate, UIGestureRecognizerDelegate, CBPageViewDelegate>
 
 @property (strong, nonatomic) NSDictionary *dataObject;
 @property (strong, nonatomic) CBModelController *modelController;

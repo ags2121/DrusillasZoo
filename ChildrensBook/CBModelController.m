@@ -57,6 +57,10 @@
     // ELSE: Create a new view controller and pass suitable data.
     CBDataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"CBDataViewController"];
     NSLog(@"index in viewController at index method: %d", index);
+    
+//    CBRootViewController *rootVC = (CBRootViewController*)self.pageViewController.parentViewController;
+//    rootVC.delegate = dataViewController;
+    
     dataViewController.dataObject = self.pageData[index-2];
     dataViewController.modelController = self;
     return dataViewController;

@@ -17,6 +17,10 @@
 @property (strong, nonatomic) NSMutableArray *attrStringArray;
 @property NSUInteger index;
 
+@property (strong, nonatomic) UIImageView *snake;
+
+- (void) imageMoved:(id) sender withEvent:(UIEvent *) event;
+
 @end
 
 @implementation CBPageView
@@ -48,7 +52,9 @@
         
         _timers = [NSMutableArray array];
         _attrStringArray = [[NSMutableArray alloc] initWithCapacity:1];
+            
     }
+    
     return self;
 }
 
@@ -189,7 +195,7 @@
 -(void)loadSound
 {
     NSString *audioPath = [[NSBundle mainBundle]
-                            pathForResource:_audioTextPath ofType:@"aiff"];
+                            pathForResource:_audioFilename ofType:@"aiff"];
     NSURL *audioURL = [NSURL fileURLWithPath:audioPath];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)
                                      audioURL, &_soundID);
@@ -209,6 +215,62 @@
 - (IBAction)homeButtonPressed:(id)sender
 {
     [self.delegate jumpToHomePage];
+}
+
+#pragma mark - animation methods
+    
+-(void)animateBird
+{
+    NSLog(@"Animating bird");
+    CGRect offscreen = CGRectMake(800, 800, 121, 90);
+    
+    UIImageView *bird = [[UIImageView alloc] initWithFrame:offscreen];
+    
+    bird.image = [UIImage imageNamed:@"bird"];
+    
+    [self addSubview:bird];
+    
+    [UIView animateWithDuration:2.0 delay:0.25 options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         bird.center = CGPointMake(384, 800);
+                     }
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:2.0 delay:0.25 options: UIViewAnimationOptionTransitionNone
+                                          animations:^{
+                                              bird.center = CGPointMake(-100, 800);
+                                          }
+                                          completion:^(BOOL finished){
+                                              NSLog(@"Bird animation complete.");
+
+                                          }
+                          
+                          ];
+                     }
+     
+     ];
+}
+
+-(void)animateSnake
+{
+    NSLog(@"Animating snake");
+    CGRect offscreen = CGRectMake(645, -200, 100, 171);
+    
+    self.snake = [[UIImageView alloc] initWithFrame:offscreen];
+    
+    self.snake.image = [UIImage imageNamed:@"snake"];
+    
+    [self addSubview:self.snake];
+    
+    [UIView animateWithDuration:2.3 delay:0.25 options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.snake.center = CGPointMake(645, 200);
+                     }
+                     completion:^(BOOL finished){
+                      
+                                          
+                     }
+     
+     ];
 }
 
 @end

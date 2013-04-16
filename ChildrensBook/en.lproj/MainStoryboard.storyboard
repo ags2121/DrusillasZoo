@@ -104,7 +104,7 @@
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-L7-8OE">
                                 <attributedString key="attributedText">
-                                    <fragment content="Click Here!">
+                                    <fragment content="   Tap Here!   ">
                                         <attributes>
                                             <color key="NSBackgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="NSColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,18 +121,18 @@
                             <constraint firstItem="k6R-8k-TNA" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="341" id="1BH-to-V2g"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="bottom" secondItem="tvu-wg-xKB" secondAttribute="bottom" type="default" id="99B-fd-vjt"/>
                             <constraint firstItem="sYa-oN-9zY" firstAttribute="trailing" secondItem="36V-Fv-q73" secondAttribute="trailing" type="default" id="BFP-dI-6ta"/>
+                            <constraint firstItem="AUa-L7-8OE" firstAttribute="top" secondItem="9Jq-wT-CDW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="C0a-vX-RSW"/>
                             <constraint firstItem="9Jq-wT-CDW" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="109" id="Cge-H1-4dn"/>
                             <constraint firstItem="KHz-WU-S9p" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="239" id="D1E-4B-Ir7"/>
+                            <constraint firstItem="AUa-L7-8OE" firstAttribute="centerX" secondItem="9Jq-wT-CDW" secondAttribute="centerX" type="default" id="LWm-et-JUA"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" type="default" id="Llo-P5-Tvi"/>
+                            <constraint firstItem="AUa-L7-8OE" firstAttribute="trailing" secondItem="k6R-8k-TNA" secondAttribute="trailing" type="default" id="Qf1-FK-j6p"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="trailing" secondItem="tvu-wg-xKB" secondAttribute="trailing" type="default" id="RFA-Ue-azT"/>
                             <constraint firstItem="KHz-WU-S9p" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="422" id="VN7-av-hOy"/>
                             <constraint firstItem="Nch-Gv-nJc" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" type="default" id="WYk-Bx-UeQ"/>
                             <constraint firstItem="36V-Fv-q73" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="102" id="Yck-Rj-rNq"/>
-                            <constraint firstItem="AUa-L7-8OE" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="183" id="Zps-aF-qq5"/>
-                            <constraint firstItem="k6R-8k-TNA" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="83" id="aNB-4l-bCs"/>
                             <constraint firstItem="9Jq-wT-CDW" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="35" id="hl9-EO-vrO"/>
                             <constraint firstItem="36V-Fv-q73" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" type="default" id="l6v-R3-rFq"/>
-                            <constraint firstItem="AUa-L7-8OE" firstAttribute="leading" secondItem="tvu-wg-xKB" secondAttribute="leading" constant="50" id="sFS-dQ-ThG"/>
                             <constraint firstItem="sYa-oN-9zY" firstAttribute="top" secondItem="tvu-wg-xKB" secondAttribute="top" constant="437" id="xPs-9Y-MiK"/>
                         </constraints>
                     </view>
@@ -241,7 +241,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="CBHomeImg@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="9zI-V9-Zxi"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-78-j5Q">
                                 <attributedString key="attributedText">
-                                    <fragment content="Click Here!">
+                                    <fragment content="   Tap Here!   ">
                                         <attributes>
                                             <color key="NSBackgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="NSColor" red="1" green="0.43529412150382996" blue="0.81176471710205078" alpha="1" colorSpace="calibratedRGB"/>
@@ -321,54 +321,6 @@
         <image name="CBTableOfContents@2x.png" width="1536" height="2008"/>
         <image name="arrow.png" width="300" height="150"/>
     </resources>
-    <classes>
-        <class className="CBCreditsTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBCreditsTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="collaborator" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CBCreditsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBCreditsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="creditsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CBDataViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBDataViewController.h"/>
-        </class>
-        <class className="CBEndingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBEndingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hitButtonLeft:"/>
-                <relationship kind="action" name="hitButtonMiddle:"/>
-                <relationship kind="action" name="hitButtonRight:"/>
-                <relationship kind="action" name="hitTheEndButton:"/>
-                <relationship kind="outlet" name="buttonLeft" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonMiddle" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonRight" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pageImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="pageText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="theEndButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CBHomePageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBHomePageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="creditsButtonPressed:"/>
-                <relationship kind="outlet" name="creditsButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CBRootViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBRootViewController.h"/>
-        </class>
-        <class className="CBTableOfContentsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CBTableOfContentsViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -33,6 +33,7 @@
     self.pageViewController.dataSource = self.modelController;
 
     [self addChildViewController:self.pageViewController];
+
     [self.view addSubview:self.pageViewController.view];
 
     // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
@@ -44,6 +45,24 @@
 
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+    
+    /*
+    ADD/REMOVE GESTURE RECOGNIZERS HERE
+     
+    UIGestureRecognizer* tapRecognizer = nil;
+    for (UIGestureRecognizer* recognizer in self.pageViewController.gestureRecognizers) {
+        if ( [recognizer isKindOfClass:[UITapGestureRecognizer class]] ) {
+            tapRecognizer = recognizer;
+            break;
+        }
+    }
+    
+    if ( tapRecognizer ) {
+        [self.view removeGestureRecognizer:tapRecognizer];
+        [self.pageViewController.view removeGestureRecognizer:tapRecognizer];
+    }
+     */
+    
 }
 
 - (void)didReceiveMemoryWarning

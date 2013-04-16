@@ -15,12 +15,12 @@
 
 @end
 
-@interface CBPageView : UIView
+@interface CBPageView : UIView <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) NSArray *wordArray;
 @property (strong, nonatomic) NSAttributedString *defaultString;
 @property (strong, nonatomic) NSString *originalString;
-@property (strong, nonatomic) NSString *audioTextPath;
+@property (strong, nonatomic) NSString *audioFilename;
 @property SystemSoundID soundID;
 
 @property (strong, nonatomic) NSArray *timeCodes;
@@ -37,5 +37,7 @@
 - (IBAction)homeButtonPressed:(id)sender;
 -(void)loadSound;
 -(void)unloadSound;
+-(void)animateBird;
+-(void)animateSnake;
 
 @end

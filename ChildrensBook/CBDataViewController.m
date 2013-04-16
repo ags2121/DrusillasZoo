@@ -44,7 +44,7 @@ static CGFloat FONT_SIZE = 50.0f;
     pageView.defaultAttributesDict = defaultAttributesDict;
     
     pageView.timeCodes = self.dataObject[@"timeCodes"];
-    pageView.audioTextPath = self.dataObject[@"audioFilename"];
+    pageView.audioFilename = self.dataObject[@"audioFilename"];
     [pageView loadSound];
     
     //add image
@@ -58,8 +58,25 @@ static CGFloat FONT_SIZE = 50.0f;
     self.view = pageView;
 
     //pass along text as words in an array, for processing
-    pageView.wordArray = [self.dataObject[@"text"] componentsSeparatedByString:@" "];    
+    pageView.wordArray = [self.dataObject[@"text"] componentsSeparatedByString:@" "];
     
+    //possibly start animation(s)
+    if([pageView.audioFilename isEqualToString:@"animals"]){
+        NSLog(@"animateBird should get called");
+        [pageView animateBird];
+    }
+    if([pageView.audioFilename isEqualToString:@"snake"]){
+        NSLog(@"animateSnake should get called");
+        
+        CGRect offscreen = CGRectMake(645, -200, 100, 171);
+        UIImageView *snake = [[UIImageView alloc] initWithFrame:offscreen];
+        snake.image = [UIImage imageNamed:@"snake"];
+        snake.userInteractionEnabled = NO;
+        
+        [self addGestureRecognizers:snake];
+        [self.view addSubview:snake];
+        [self animateSnake:snake];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,5 +110,95 @@ static CGFloat FONT_SIZE = 50.0f;
     [self.modelController.pageViewController setViewControllers:viewControllersToJumpTo direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:NULL];
     
 }
+
+-(void)animateSnake:(UIImageView*)snake
+{
+    
+    [UIView animateWithDuration:2.3 delay:0.25 options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         snake.center = CGPointMake(645, 200);
+                     }
+                     completion:^(BOOL finished){
+                         snake.userInteractionEnabled = YES;
+                     }
+     ];
+}
+
+- (void)addGestureRecognizers:(UIView *)piece
+{
+    UIRotationGestureRecognizer *rotationGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotatePiece:)];
+    [piece addGestureRecognizer:rotationGesture];
+    
+    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(scalePiece:)];
+    [pinchGesture setDelegate:self];
+    [piece addGestureRecognizer:pinchGesture];
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panPiece:)];
+    [panGesture setMaximumNumberOfTouches:2];
+    [panGesture setDelegate:self];
+    [piece addGestureRecognizer:panGesture];
+}
+
+- (void)adjustAnchorPointForGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        UIView *piece = gestureRecognizer.view;
+        CGPoint locationInView = [gestureRecognizer locationInView:piece];
+        CGPoint locationInSuperview = [gestureRecognizer locationInView:piece.superview];
+        
+        piece.layer.anchorPoint = CGPointMake(locationInView.x / piece.bounds.size.width, locationInView.y / piece.bounds.size.height);
+        piece.center = locationInSuperview;
+    }
+}
+
+- (void)panPiece:(UIPanGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"Pan piece getting called");
+    UIImageView *piece = (UIImageView*)[gestureRecognizer view];
+    [[piece superview] bringSubviewToFront:piece];
+    
+    [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
+    
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan || [gestureRecognizer state] == UIGestureRecognizerStateChanged) {
+        CGPoint translation = [gestureRecognizer translationInView:[piece superview]];
+        
+        [piece setCenter:CGPointMake([piece center].x + translation.x, [piece center].y + translation.y)];
+        [gestureRecognizer setTranslation:CGPointZero inView:[piece superview]];
+    }
+}
+
+/*******************************************************************************
+ * @method      rotatePiece:
+ * @abstract    <# abstract #>
+ * @description rotate the piece by the current rotation
+ *              reset the gesture recognizer's rotation to 0 after applying so
+ *              the next callback is a delta from the current rotation
+ *******************************************************************************/
+- (void)rotatePiece:(UIRotationGestureRecognizer *)gestureRecognizer
+{
+    [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
+    
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan || [gestureRecognizer state] == UIGestureRecognizerStateChanged) {
+        [gestureRecognizer view].transform = CGAffineTransformRotate([[gestureRecognizer view] transform], [gestureRecognizer rotation]);
+        [gestureRecognizer setRotation:0];
+    }
+}
+
+/*******************************************************************************
+ * @method      scalePiece
+ * @abstract
+ * @description Scale the piece by the current scale; reset the gesture recognizer's
+ *              rotation to 0 after applying so the next callback is a delta from the current scale
+ *******************************************************************************/
+- (void)scalePiece:(UIPinchGestureRecognizer *)gestureRecognizer
+{
+    [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
+    
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan || [gestureRecognizer state] == UIGestureRecognizerStateChanged) {
+        [gestureRecognizer view].transform = CGAffineTransformScale([[gestureRecognizer view] transform], [gestureRecognizer scale], [gestureRecognizer scale]);
+        [gestureRecognizer setScale:1];
+    }
+}
+
 
 @end

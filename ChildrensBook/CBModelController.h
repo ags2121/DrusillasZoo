@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class CBDataViewController;
+@class CBModelController;
 
 @interface CBModelController : NSObject <UIPageViewControllerDataSource>
 
