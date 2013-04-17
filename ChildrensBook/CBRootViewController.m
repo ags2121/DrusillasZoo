@@ -62,7 +62,6 @@
         [self.pageViewController.view removeGestureRecognizer:tapRecognizer];
     }
      */
-    
 }
 
 - (void)didReceiveMemoryWarning

@@ -57,6 +57,11 @@
 		A97D6C44171B239600620708 /* bird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97D6C42171B239500620708 /* bird@2x.png */; };
 		A97D6C47171B2F4A00620708 /* snake.png in Resources */ = {isa = PBXBuildFile; fileRef = A97D6C45171B2F4900620708 /* snake.png */; };
 		A97D6C48171B2F4A00620708 /* snake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97D6C46171B2F4900620708 /* snake@2x.png */; };
+		A996ECEB171F142300FC0F53 /* CBSysIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A996ECE9171F142300FC0F53 /* CBSysIcon.png */; };
+		A996ECEC171F142300FC0F53 /* CBSysIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A996ECEA171F142300FC0F53 /* CBSysIcon@2x.png */; };
+		A996ECEE171F145300FC0F53 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A996ECED171F145300FC0F53 /* Settings.bundle */; };
+		A996ECF0171F462500FC0F53 /* CBSysIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A996ECEF171F462500FC0F53 /* CBSysIcon.png */; };
+		A996ECF2171F462B00FC0F53 /* CBSysIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A996ECF1171F462B00FC0F53 /* CBSysIcon@2x.png */; };
 		A9A241DC17173AC20042160B /* CBTableOfContents.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A241D817173AC20042160B /* CBTableOfContents.png */; };
 		A9A241DD17173AC20042160B /* CBTableOfContents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A241D917173AC20042160B /* CBTableOfContents@2x.png */; };
 		A9A241E5171747C20042160B /* CBTableOfContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A241E4171747C20042160B /* CBTableOfContentsViewController.m */; };
@@ -132,6 +137,11 @@
 		A97D6C42171B239500620708 /* bird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird@2x.png"; sourceTree = "<group>"; };
 		A97D6C45171B2F4900620708 /* snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake.png; sourceTree = "<group>"; };
 		A97D6C46171B2F4900620708 /* snake@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snake@2x.png"; sourceTree = "<group>"; };
+		A996ECE9171F142300FC0F53 /* CBSysIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBSysIcon.png; sourceTree = "<group>"; };
+		A996ECEA171F142300FC0F53 /* CBSysIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CBSysIcon@2x.png"; sourceTree = "<group>"; };
+		A996ECED171F145300FC0F53 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A996ECEF171F462500FC0F53 /* CBSysIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBSysIcon.png; sourceTree = "<group>"; };
+		A996ECF1171F462B00FC0F53 /* CBSysIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CBSysIcon@2x.png"; sourceTree = "<group>"; };
 		A9A241D817173AC20042160B /* CBTableOfContents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CBTableOfContents.png; sourceTree = "<group>"; };
 		A9A241D917173AC20042160B /* CBTableOfContents@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CBTableOfContents@2x.png"; sourceTree = "<group>"; };
 		A9A241E3171747C20042160B /* CBTableOfContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBTableOfContentsViewController.h; sourceTree = "<group>"; };
@@ -168,6 +178,7 @@
 			children = (
 				A90B26CB1710B2E000536D15 /* CreditsList.plist */,
 				A9B758BF1711E9100020676C /* StoryData.plist */,
+				A996ECE8171F131000FC0F53 /* SystemIcons */,
 				A9DD929F1713573600C60985 /* Audio */,
 				A9B758C11711E99C0020676C /* Images */,
 			);
@@ -177,6 +188,8 @@
 		A91DC733170E62F100831794 = {
 			isa = PBXGroup;
 			children = (
+				A996ECF1171F462B00FC0F53 /* CBSysIcon@2x.png */,
+				A996ECEF171F462500FC0F53 /* CBSysIcon.png */,
 				A9A241E8171752550042160B /* QuartzCore.framework */,
 				A9DD92A217135A2500C60985 /* AudioToolbox.framework */,
 				A91DC745170E62F100831794 /* ChildrensBook */,
@@ -230,6 +243,7 @@
 		A91DC746170E62F100831794 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A996ECED171F145300FC0F53 /* Settings.bundle */,
 				A91DC74E170E62F100831794 /* CBAppDelegate.h */,
 				A91DC74F170E62F100831794 /* CBAppDelegate.m */,
 				A91DC747170E62F100831794 /* ChildrensBook-Info.plist */,
@@ -254,6 +268,15 @@
 				A90B26CF1710B71500536D15 /* CBCreditsTableViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A996ECE8171F131000FC0F53 /* SystemIcons */ = {
+			isa = PBXGroup;
+			children = (
+				A996ECE9171F142300FC0F53 /* CBSysIcon.png */,
+				A996ECEA171F142300FC0F53 /* CBSysIcon@2x.png */,
+			);
+			name = SystemIcons;
 			sourceTree = "<group>";
 		};
 		A9B758C11711E99C0020676C /* Images */ = {
@@ -404,6 +427,11 @@
 				A97D6C44171B239600620708 /* bird@2x.png in Resources */,
 				A97D6C47171B2F4A00620708 /* snake.png in Resources */,
 				A97D6C48171B2F4A00620708 /* snake@2x.png in Resources */,
+				A996ECEB171F142300FC0F53 /* CBSysIcon.png in Resources */,
+				A996ECEC171F142300FC0F53 /* CBSysIcon@2x.png in Resources */,
+				A996ECEE171F145300FC0F53 /* Settings.bundle in Resources */,
+				A996ECF0171F462500FC0F53 /* CBSysIcon.png in Resources */,
+				A996ECF2171F462B00FC0F53 /* CBSysIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
