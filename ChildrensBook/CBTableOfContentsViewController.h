@@ -11,6 +11,6 @@
 
 @class CBTableOfContentsViewController;
 
-@interface CBTableOfContentsViewController : UIViewController <CBPanGestureDelegate, UIGestureRecognizerDelegate>
+@interface CBTableOfContentsViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @end

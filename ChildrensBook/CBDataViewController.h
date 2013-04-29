@@ -13,7 +13,7 @@
 
 @class CBDataViewController;
 
-@interface CBDataViewController : UIViewController <CBPanGestureDelegate, UIGestureRecognizerDelegate, CBPageViewDelegate>
+@interface CBDataViewController : UIViewController <UIGestureRecognizerDelegate, CBPageViewDelegate>
 
 @property (strong, nonatomic) NSDictionary *dataObject;
 @property (strong, nonatomic) CBModelController *modelController;

@@ -9,18 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CBModelController.h"
 
-@protocol CBPanGestureDelegate <NSObject>
-
-- (BOOL)shouldRootViewRespondtoPan:(UIGestureRecognizer*)gesture;
-
-@end
-
 @interface CBRootViewController : UIViewController <UIPageViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (readonly, strong, nonatomic) CBModelController *modelController;
 @property NSUInteger currentPageIndex;
-
-@property (nonatomic, weak) id<CBPanGestureDelegate> delegate;
 
 @end
