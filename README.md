@@ -7,7 +7,7 @@ Children's Book for iPad. Implements the following features:
 <li>A “Credits” page accessible from the “Home Page”. A UITableView gives
 credit to the author, illustrator, publisher, etc. 
 <li>8 pages of unique content, written, illustrated, and read by a 5 year old.
-<li>Uses a .xib ﬁle as interface for the story pages
+<li>Uses a .xib ﬁle as interface for the story pages.
 <li>Creates a bookmark by storing the current page in NSUserDefaults. When the apps 
 is relaunched, you should be taken to the current page.
 <li>“Read to Me” functionality on each story page. When you hit the "read to me" button the words highlight as they are read. 
